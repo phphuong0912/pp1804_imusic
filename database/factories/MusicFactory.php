@@ -13,13 +13,15 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Models\User::class, function (Faker $faker) {
+$factory->define(App\Models\Music::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'role' => rand(1, 3),
-        'remember_token' => str_random(10),
+        'lyrics' => $faker->realText,
+        'view_count' => 0,
+        'artist_id' => factory(App\Models\Artist::class)->create(),
+        'album_id' => factory(App\Models\Album::class)->create(),
+        'path' => 'music.mp3',
+        'type' => 'mp4',
     ];
 });
+

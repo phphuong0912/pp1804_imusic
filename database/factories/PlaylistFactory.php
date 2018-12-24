@@ -13,13 +13,10 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Models\User::class, function (Faker $faker) {
+$factory->define(App\Models\Playlist::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'role' => rand(1, 3),
-        'remember_token' => str_random(10),
+        'playlist_name' => $faker->sentence,
+        'user_id' => 2,
+        'avatar' => $faker->sentence,
     ];
 });
