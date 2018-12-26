@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Comment;
 use App\Models\Playlist;
+use App\Models\Rating;
 
 class User extends Authenticatable
 {
@@ -38,5 +39,15 @@ class User extends Authenticatable
     public function playlists()
     {
         return $this->hasMany(Playlist::class);
+    }
+
+    public function image()
+    {
+        return $this->belongsTo('App\Models\Image');
+    }
+
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
     }
 }
