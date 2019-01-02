@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Welcomne to Framgia Imusic</title>
+    <title>Welcome to Framgia Imusic</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
@@ -250,7 +250,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{ route ('exit') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -274,16 +274,13 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> {{ trans('message.dashboard') }}</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> {{ trans('message.user') }} <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="{{ route('users.index') }}">{{ trans('message.list_user') }}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -306,7 +303,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Framgia Imusic</h1>
+                        @yield('content')
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -320,16 +317,16 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="{{ asset('js/metisMenu.min.js') }}"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="{{ asset('js/sb-admin-2.js') }}"></script>
 
 </body>
 
