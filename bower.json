@@ -1,0 +1,24 @@
+{
+  "name": "pepsi",
+  "description": "",
+  "main": "",
+  "authors": [
+    "caoxuanhoi <xuanhoi161995@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/caoxuanhoi/pp1804_imusic",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Font-Awesome": "https://github.com/FortAwesome/Font-Awesome.git#^5.6.3",
+    "style": "https://github.com/bensmithett/style.git#^4.1.0",
+    "font-awesome-icon-chars": "https://github.com/gluons/Font-Awesome-Icon-Chars.git#^2.4.0",
+    "bootstrap": "https://github.com/twbs/bootstrap.git#^4.2.1"
+  }
+}
