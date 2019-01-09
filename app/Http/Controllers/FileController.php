@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\FileRequest;
+use App\Models\File;
 
-class UserController extends Controller
+class FileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
-        return view('admin.user.index', compact('users'));
+        //
     }
 
     /**
@@ -27,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.file.create');
     }
 
     /**
@@ -36,14 +34,17 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
-    {   
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
-        ]);
-        return redirect()->route('users.index');
+    public function store(FileRequest $request)
+    {
+        if($request->hasfile('filename'))
+        {
+            $destinationPath = 'file_upload';
+            $file->move($destinationPath, $file->getClientOriginalName());
+        }
+
+        $file= new File();
+        $file->save();
+        return back()->with('success', 'Your files has been successfully added');
     }
 
     /**
@@ -54,9 +55,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-
-        return view('admin.user.show', compact('user'));
+        //
     }
 
     /**
@@ -67,9 +66,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-
-        return view('admin.user.edit', compact('user'));
+        //
     }
 
     /**
@@ -81,15 +78,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-
-        $user->update([
-            'name' => $request->username,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
-        ]);
-
-        return redirect()->route('users.index');
+        //
     }
 
     /**
@@ -100,8 +89,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::destroy($id);
-
-        return redirect()->route('users.index');
+        //
     }
 }
