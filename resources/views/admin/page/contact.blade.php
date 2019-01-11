@@ -24,24 +24,8 @@
             </p>
         </div>
         <div class="clearfix"> </div>
-        <div class="contact-left1">
-            <h3>Contact Us With <span>Any questions</span></h3>
-            <div class="in-left">
-                <form action="#" method="post">
-                    <p class="your-para">Your Name :</p>
-                    <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
-                    <p class="your-para">Your Mail :</p>
-                    <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
-                    <p class="your-para">Phone Number:</p>
-                    <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
-                </form>
-            </div>
-            <div class="in-right">
-                <form>
-                    <textarea placeholder="" onfocus="this.value='';" onblur="if (this.value == '') {this.value = '';}" required=""></textarea>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+        <div class="contact-left">
+        </div>
             <div class="clearfix"> </div>
         </div>
         <div class="contact-right1">

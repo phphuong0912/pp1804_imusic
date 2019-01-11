@@ -38,10 +38,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			<!--logo and iconic logo start-->
 			<div class="logo">
-				<h1><a href="index.html">Music.<span>F</span></a></h1>
+				<h1><a href="{{ route('trang-chu')}} ">Music.<span>F</span></a></h1>
 			</div>
 			<div class="logo-icon text-center">
-				<a href="index.html">M </a>
+				<a href="{{ route('trang-chu')}} ">M </a>
 			</div>
  	 <!-- /w3l-agile -->
 			<!--logo and iconic logo end-->
@@ -143,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				@include('admin.layout.footer')					
         <!--footer section start-->
 			<footer>
-			   <p>&copy 2019 Music.Framgia All Rights Reserved | Design by Phạm Hoàng Phương-Cao Xuân Hợi</p>
+			   <p>&copy 2019 Music.Framgia | Design by Phạm Hoàng Phương-Cao Xuân Hợi</p>
 			</footer>
         <!--footer section end-->
  	 <!-- /w3l-agile -->

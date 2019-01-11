@@ -12,32 +12,30 @@
                         <ul class="rslides callbacks callbacks1" id="slider4">
                             <li>
                                 <div class="banner-img">
-                                    <img src="images/11.jpg" class="img-responsive" alt="">
+                                    <a href="{{ route('radio')}} "><img src="source/image/126.jpg" class="img-responsive" alt=""></a>
                                 </div>
                                 <div class="banner-info">
-                                    <a class="trend" href="single.html">TRENDING</a>
-                                    <h3>Let Your Home</h3>
-                                    <p>Album by <span>Rock star</span></p>
+                                    <p><span>Nhac Hot</span></p>
                                 </div>
                             </li>
                             <li>
                                 <div class="banner-img">
-                                    <img src="images/22.jpg" class="img-responsive" alt="">
+                                    <img src="source/image/125.jpg" class="img-responsive" alt="">
                                 </div>
                                 <div class="banner-info">
-                                    <a class="trend" href="single.html">TRENDING</a>
-                                    <h3>Charis Brown feet</h3>
-                                    <p>Album by <span>Rock star</span></p>
+                                    <a class="trend" href="{{ route('radio')}} ">TRENDING</a>
+                                    <h3>Relaxing</h3>
+                                    <p>Album by <span>Relax</span></p>
                                 </div>
                             </li>
                             <li>
                                 <div class="banner-img">
-                                    <img src="images/33.jpg" class="img-responsive" alt="">
+                                    <img src="source/image/127.jpg" class="img-responsive" alt="">
                                 </div>
                                 <div class="banner-info">
-                                    <a class="trend" href="single.html">TRENDING</a>
-                                    <h3>Let Your Home</h3>
-                                    <p>Album by <span>Rock star</span></p>
+                                    <a class="trend" href="{{ route('radio')}} ">TRENDING</a>
+                                    <h3>VPOP</h3>
+                                    <p>Album by <span>Pop star</span></p>
                                 </div>
                                 <!-- /w3layouts-agileits -->
                             </li>
@@ -91,16 +89,18 @@
             <!--//pop-up-box -->
             <div class="albums">
                 <div class="tittle-head">
-                    <h3 class="tittle">New Releases <span class="new">New</span></h3>
-                    <a href="index.html">
+                    <h3 class="tittle">New Song <span class="new">New</span></h3>
+                    <a href="{{ route('radio')}} ">
                         <h4 class="tittle">See all</h4>
                     </a>
                     <div class="clearfix"> </div>
                 </div>
+               
                 <div class="col-md-3 content-grid">
                     <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v1.jpg" title="allbum-name"></a>
                     <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
                 </div>
+                
                 <div id="small-dialog" class="mfp-hide">
                     <iframe src="https://player.vimeo.com/video/12985622"></iframe>
                 </div>
@@ -142,7 +142,7 @@
             <div class="albums second">
                 <div class="tittle-head">
                     <h3 class="tittle">Discover <span class="new">View</span></h3>
-                    <a href="index.html">
+                    <a href="{{ route('radio')}} ">
                         <h4 class="tittle two">See all</h4>
                     </a>
                     <div class="clearfix"> </div>
