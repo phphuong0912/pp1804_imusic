@@ -1,12 +1,15 @@
 {
-  "name": "pepsi",
-  "description": "",
-  "main": "",
+  "name": "iMusic",
+  "description": "music",
+  "main": "index.php",
   "authors": [
-    "caoxuanhoi <xuanhoi161995@gmail.com>"
+    "Phuong"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/caoxuanhoi/pp1804_imusic",
+  "license": "n/a",
+  "keywords": [
+    "music"
+  ],
+  "homepage": "https://github.com/phphuong0912/pp1804_imusic",
   "private": true,
   "ignore": [
     "**/.*",
