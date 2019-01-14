@@ -19,6 +19,37 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkRole'], function() {
     Route::resource('users','UserController');
 });
 
-Route::get('/', function(){
-    return view('admin.page.index');
-});
+Route::get('index', [
+    'as'=>'trang-chu',
+    'uses'=>'PageController@getIndex'
+    ]);
+
+Route::get('blog', [
+    'as'=>'blog',
+    'uses'=>'PageController@getBlog'
+    ]);
+
+Route::get('browse', [
+    'as'=>'browse',
+    'uses'=>'PageController@getBrowse'
+    ]);
+
+Route::get('contact', [
+    'as'=>'contact',
+    'uses'=>'PageController@getContact'
+    ]);
+
+Route::get('radio', [
+    'as'=>'radio',
+    'uses'=>'PageController@getRadio'
+    ]);
+
+Route::get('single', [
+    'as'=>'single',
+    'uses'=>'PageController@getSingle'
+    ]);
+
+Route::get('typography', [
+    'as'=>'typography',
+    'uses'=>'PageController@getTypography'
+    ]);

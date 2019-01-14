@@ -5,7 +5,7 @@
 
                     <input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
                     <input class="sb-search-submit" type="submit" value="">
-                    <span class="sb-icon-search"> </span>
+                    <span class="sb-icon-search"><img src="source/image/search.png"></span>
                 </form>
             </div>
         </div>
@@ -46,13 +46,13 @@
 
                             <!--//-->
                             <ul class="next-top">
-                                <li><a class="ar" href="#"> <img src="images/arrow.png" alt=""/></a></li>
-                                <li><a class="ar2" href="#"><img src="images/arrow2.png" alt=""/></i></a></li>
+                                <li><a class="ar" href="#"> <img src="source/image/arrow.png" alt=""/></a></li>
+                                <li><a class="ar2" href="#"><img src="source/image/arrow2.png" alt=""/></i></a></li>
                                     
                             </ul>	
                         </div>
                         <div class="col-md-4 login-pop">
-                            <div id="loginpop"> <a href="#" id="loginButton"><span>Login <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a><a class="top-sign" href="#" data-toggle="modal" data-target="#myModal5"><i class="fa fa-sign-in"></i></a>
+                            <div id="loginpop"> <a href="#" id="loginButton"><span>Login </i></span></a><a class="top-sign" href="#" data-toggle="modal" data-target="#myModal5"><img src="source/image/user.png"></a>
                                     <div id="loginBox">  
                             <form action="#" method="post" id="loginForm">
                                                 <fieldset id="body">
