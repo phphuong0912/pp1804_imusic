@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -63,10 +64,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'role' => config('custom.role.user'), 
             'password' => Hash::make($data['password']),
         ]);
+        $emails = $data['email'];
+        Mail::send('email.welcome', ['user' => $user], function($message) use ($emails)
+        {    
+            $message->to($emails)->subject('This is test e-mail');    
+        });
+
+        return $user;
+
     }
 }
