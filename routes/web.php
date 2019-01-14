@@ -16,7 +16,8 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('exit');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'checkRole'], function() {
-    Route::resource('users','UserController');
+    Route::resource('users', 'UserController');
+    Route::resource('musics', 'MusicController');
 });
 
 Route::get('index', [

@@ -9,5 +9,4 @@
 <br/>
 Your registered email-id is {{ $user['email'] }}
 </body>
-
 </html>
