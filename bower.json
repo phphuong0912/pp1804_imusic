@@ -20,8 +20,8 @@
   ],
   "dependencies": {
     "Font-Awesome": "https://github.com/FortAwesome/Font-Awesome.git#^5.6.3",
-    "style": "https://github.com/bensmithett/style.git#^4.1.0",
-    "font-awesome-icon-chars": "https://github.com/gluons/Font-Awesome-Icon-Chars.git#^2.4.0",
-    "bootstrap": "https://github.com/twbs/bootstrap.git#^4.2.1"
+    "bootstrap": "https://github.com/twbs/bootstrap.git#^4.2.1",
+    "sb-admin": "*",
+    "metisMenu": "^3.0.3"
   }
 }

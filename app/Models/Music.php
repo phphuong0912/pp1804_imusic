@@ -14,6 +14,21 @@ class Music extends Model
 
     protected $table = "musics";
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 
+        'view_count', 
+        'path', 
+        'lyrics', 
+        'type',
+        'artist_id',
+        'album_id'
+    ];
+
     public function playlists()
     {
         return $this->belongsToMany(Playlist::class); 
