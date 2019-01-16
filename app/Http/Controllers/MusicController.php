@@ -119,4 +119,18 @@ class MusicController extends Controller
 
         return redirect()->route('musics.index');
     }
+
+    public function favoriteMusic(Post $music)
+    {
+        Auth::user()->favorites()->attach($music->id);
+
+        return back();
+    }
+
+    public function unFavoriteMusic(Post $music)
+    {
+        Auth::user()->favorites()->detach($music->id);
+
+        return back();
+    }
 }

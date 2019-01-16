@@ -20,6 +20,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkRole'], function() {
     Route::resource('musics', 'MusicController');
 });
 
+Route::post('favorite/{music}', 'MusicController@favoriteMusic');
+Route::post('unfavorite/{music}', 'MusicController@unFavoriteMusic');
+
+Route::get('my_favorites', 'UserController@myFavorites')->middleware('auth');
+
 Route::get('index', [
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'

@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Music;
 use App\Models\User;
 
-class Rating extends Model
+use Illuminate\Database\Eloquent\Model;
+
+class Favorite extends Model
 {
-    protected $table = "ratings";
-    
+    protected $table = "favorites";
+
     public function musics()
     {
         return $this->belongsTo(Music::class);
@@ -19,5 +20,4 @@ class Rating extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 }
