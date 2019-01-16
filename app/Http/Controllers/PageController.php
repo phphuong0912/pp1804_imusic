@@ -3,15 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Music;
 use App\Models\Album;
+use App\Models\Artist;
 
 class pageController extends Controller
 {
     public function getIndex()
     {  
-        $album = Album::all();
+        $songs = Music::all();
+        $albums = Album::all();
+        $artists = Artist::all();
         
-        return view('admin.page.index',compact('album'));
+        return view('admin.page.index',compact('songs', 'albums', 'artists'));
     }
 
     public function getBlog()

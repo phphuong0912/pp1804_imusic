@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="left-side-inner">
 
 				<!--sidebar nav start-->
-					@include('admin.layout.menu')
+					@include('frontend.layout.menu')
 				<!--sidebar nav end-->
 			</div>
 		</div>
@@ -68,13 +68,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>Download and Avail Special Songs Videos and Audios.</p>
 							<div class="app-devices">
 								<h5>Gets the app from</h5>
-								<a href="#"><img src="images/1.png" alt=""></a>
-								<a href="#"><img src="images/2.png" alt=""></a>
+								<a href="https://www.apple.com/ios/app-store/"><img src="source/image/1.png" alt=""></a>
+								<a href="http://gameappsfree.com/game/google-play-store.html"><img src="source/image/2.png" alt=""></a>
 								<div class="clearfix"> </div>
 							</div>
 						</div>
 						<div class="col-md-7 app-image">
-							<img src="images/apps.png" alt="">
+							<img src="source/image/apps.png" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -134,13 +134,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--toggle button end-->
 			<!--notification menu start -->
 			<div class="menu-right">
-			@include('admin.layout.header')
+			@include('frontend.layout.header')
 </div>
 			<!--notification menu end -->
 			<!-- //header-ends -->
  	 <!-- /w3l-agileits -->
 				@yield('content')					
-				@include('admin.layout.footer')					
+				@include('frontend.layout.footer')					
         <!--footer section start-->
 			<footer>
 			   <p>&copy 2019 Music.Framgia | Design by Phạm Hoàng Phương-Cao Xuân Hợi</p>

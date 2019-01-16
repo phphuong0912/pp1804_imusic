@@ -1,5 +1,5 @@
 
-@extends('admin.master')
+@extends('frontend.trangchu')
 @section('content')
 <!-- //header-ends -->
 <div id="page-wrapper">
@@ -95,122 +95,34 @@
                     </a>
                     <div class="clearfix"> </div>
                 </div>
-               
+                @foreach($songs as $song)
                 <div class="col-md-3 content-grid">
-                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v1.jpg" title="allbum-name"></a>
-                    <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
+                    <a class="play-icon popup-with-zoom-anim" href="{{ route('single', '$song->id')}} "><img src="source/images/v1.jpg" title="allbum-name"></a>
+                    <a class="button play-icon popup-with-zoom-anim" href="{{ route('single', '$song->id')}} ">{{$song->name}}</a>
                 </div>
-                
-                <div id="small-dialog" class="mfp-hide">
-                    <iframe src="https://player.vimeo.com/video/12985622"></iframe>
-                </div>
-                <div class="col-md-3 content-grid">
-                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v2.jpg" title="allbum-name"></a>
-                    <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                </div>
-                <div class="col-md-3 content-grid">
-                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v3.jpg" title="allbum-name"></a>
-                    <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                </div>
-                <div class="col-md-3 content-grid last-grid">
-                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v4.jpg" title="allbum-name"></a>
-                    <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                </div>
-                <div class="col-md-3 content-grid">
-                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v5.jpg" title="allbum-name"></a>
-                    <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                </div>
-                <div id="small-dialog" class="mfp-hide">
-                    <iframe src="https://player.vimeo.com/video/12985622"></iframe>
-                </div>
-                <div class="col-md-3 content-grid">
-                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v6.jpg" title="allbum-name"></a>
-                    <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                </div>
-                <div class="col-md-3 content-grid">
-                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v7.jpg" title="allbum-name"></a>
-                    <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                </div>
-                <div class="col-md-3 content-grid last-grid">
-                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog"><img src="images/v8.jpg" title="allbum-name"></a>
-                    <a class="button play-icon popup-with-zoom-anim" href="#small-dialog">Listen now</a>
-                </div>
+                @endforeach
                 <div class="clearfix"> </div>
             </div>
             <!--//End-albums-->
             <!--//discover-view-->
             <div class="albums second">
                 <div class="tittle-head">
-                    <h3 class="tittle">Discover <span class="new">View</span></h3>
+                    <h3 class="tittle">Albums <span class="new">View</span></h3>
                     <a href="{{ route('radio')}} ">
                         <h4 class="tittle two">See all</h4>
                     </a>
                     <div class="clearfix"> </div>
                 </div>
+                @foreach($albums as $album)
                 <div class="col-md-3 content-grid">
-                    <a href="single.html"><img src="images/v11.jpg" title="allbum-name"></a>
+                    <a href="{{ route('album', '$album->id')}} "><img src="source/image/v11.jpg" title="allbum-name"></a>
                     <div class="inner-info">
-                        <a href="single.html">
-                            <h5>Pop</h5>
+                        <a href="{{ route('album', '$album->id')}} ">
+                            <h5>{{ $album->name }}</h5>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 content-grid">
-                    <a href="single.html"><img src="images/v22.jpg" title="allbum-name"></a>
-                    <div class="inner-info">
-                        <a href="single.html">
-                            <h5>Pop</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 content-grid">
-                    <a href="single.html"><img src="images/v33.jpg" title="allbum-name"></a>
-                    <div class="inner-info">
-                        <a href="single.html">
-                            <h5>Pop</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 content-grid last-grid">
-                    <a href="single.html"><img src="images/v44.jpg" title="allbum-name"></a>
-                    <div class="inner-info">
-                        <a href="single.html">
-                            <h5>Pop</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 content-grid">
-                    <a href="single.html"><img src="images/v55.jpg" title="allbum-name"></a>
-                    <div class="inner-info">
-                        <a href="single.html">
-                            <h5>Pop</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 content-grid">
-                    <a href="single.html"><img src="images/v66.jpg" title="allbum-name"></a>
-                    <div class="inner-info">
-                        <a href="single.html">
-                            <h5>Pop</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 content-grid">
-                    <a href="single.html"><img src="images/v11.jpg" title="allbum-name"></a>
-                    <div class="inner-info">
-                        <a href="single.html">
-                            <h5>Pop</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 content-grid last-grid">
-                    <a href="single.html"><img src="images/v22.jpg" title="allbum-name"></a>
-                    <div class="inner-info">
-                        <a href="single.html">
-                            <h5>Pop</h5>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
                 <div class="clearfix"> </div>
             </div>
             <!--//discover-view-->
@@ -381,10 +293,10 @@
             <div class="apps">
                 <h3 class="hd-tittle">Mosaic now available in</h3>
                 <div class="banner-button">
-                    <a href="#"><img src="images/1.png" alt=""></a>
+                    <a href="https://www.apple.com/ios/app-store/"><img src="source/image/1.png" alt=""></a>
                 </div>
                 <div class="banner-button green-button">
-                    <a href="#"><img src="images/2.png" alt=""></a>
+                    <a href="http://gameappsfree.com/game/google-play-store.html"><img src="source/image/2.png" alt=""></a>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -459,95 +371,25 @@
     <!--body wrapper start-->
     <div class="review-slider">
         <div class="tittle-head">
-            <h3 class="tittle">Featured Albums <span class="new"> New</span></h3>
+            <h3 class="tittle">Artist <span class="new"> New</span></h3>
             <div class="clearfix"> </div>
         </div>
         <ul id="flexiselDemo1">
+            @foreach($artists as $artist)    
             <li>
-                <a href="single.html"><img src="images/v1.jpg" alt=""/></a>
+                <a href="{{ route('artist', '$artist->id')}} "><img src="source/image/v1.jpg" alt=""/></a>
                 <div class="slide-title">
                     <h4>
-                    Adele21 
+                    {{ $artist->name }} 
                 </div>
                 <div class="date-city">
-                    <h5>Jan-02-16</h5>
+                    <h5>{{ $artist->birthday }}</h5>
                     <div class="buy-tickets">
-                        <a href="single.html">READ MORE</a>
+                        <a href="{{ route('artist', '$artist->description')}} ">READ MORE</a>
                     </div>
                 </div>
             </li>
-            <li>
-                <a href="single.html"><img src="images/v2.jpg" alt=""/></a>
-                <div class="slide-title">
-                    <h4>Adele21</h4>
-                </div>
-                <div class="date-city">
-                    <h5>Jan-02-16</h5>
-                    <div class="buy-tickets">
-                        <a href="single.html">READ MORE</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="single.html"><img src="images/v3.jpg" alt=""/></a>
-                <div class="slide-title">
-                    <h4>Shomlock</h4>
-                </div>
-                <div class="date-city">
-                    <h5>Jan-02-16</h5>
-                    <div class="buy-tickets">
-                        <a href="single.html">READ MORE</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="single.html"><img src="images/v4.jpg" alt=""/></a>
-                <div class="slide-title">
-                    <h4>Stuck on a feeling</h4>
-                </div>
-                <div class="date-city">
-                    <h5>Jan-02-16</h5>
-                    <div class="buy-tickets">
-                        <a href="single.html">READ MORE</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="single.html"><img src="images/v5.jpg" alt=""/></a>
-                <div class="slide-title">
-                    <h4>Ricky Martine </h4>
-                </div>
-                <div class="date-city">
-                    <h5>Jan-02-16</h5>
-                    <div class="buy-tickets">
-                        <a href="single.html">READ MORE</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="single.html"><img src="images/v6.jpg" alt=""/></a>
-                <div class="slide-title">
-                    <h4>Ellie Goluding </h4>
-                </div>
-                <div class="date-city">
-                    <h5>Jan-02-16</h5>
-                    <div class="buy-tickets">
-                        <a href="single.html">READ MORE</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="single.html"><img src="images/v6.jpeg" alt=""/></a>
-                <div class="slide-title">
-                    <h4>Fifty Shades </h4>
-                </div>
-                <div class="date-city">
-                    <h5>Jan-02-16</h5>
-                    <div class="buy-tickets">
-                        <a href="single.html">READ MORE</a>
-                    </div>
-                </div>
-            </li>
+            @endforeach
         </ul>
         <script type="text/javascript">
             $(window).load(function() {
