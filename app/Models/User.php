@@ -56,4 +56,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(File::class);
     }
+
+    public function favorites()
+    {
+        return $this->belongsToMany(Music::class, 'favorites', 'user_id', 'music_id')->withTimeStamps();
+    }
 }

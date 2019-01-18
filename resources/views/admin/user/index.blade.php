@@ -1,4 +1,4 @@
-@extends('admin.layout.master')
+@extends('admin.master')
 
 @section('title','User')
 
@@ -55,6 +55,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $users->links() }}
                 <!-- /.table-responsive -->
             </div>
             <!-- /.panel-body -->

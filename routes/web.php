@@ -11,14 +11,20 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('welcome');
+Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('exit');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'checkRole'], function() {
     Route::resource('users', 'UserController');
     Route::resource('musics', 'MusicController');
+    Route::resource('artists', 'ArtistController');
 });
+
+Route::post('favorite/{music}', 'MusicController@favoriteMusic');
+Route::post('unfavorite/{music}', 'MusicController@unFavoriteMusic');
+
+Route::get('my_favorites', 'UserController@myFavorites')->middleware('auth');
 
 Route::get('index', [
     'as'=>'trang-chu',

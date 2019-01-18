@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Http\Requests\UserRequest;
+use App\Models\Artist;
 
-class UserController extends Controller
+class ArtistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(config('custom.paginate_5'));
+        $artists = Artist::paginate(config('custom.paginate_5'));
 
-        return view('admin.user.index', compact('users'));
+        return view('admin.artist.index', compact('artists'));
     }
 
     /**
@@ -27,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.artist.create');
     }
 
     /**
@@ -36,14 +35,15 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
-    {   
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
+    public function store(Request $request)
+    {
+        Artist::create([
+            'name' => $request->artist_name,
+            'birthday' => $request->birthday,
+            'description' => $request->description,
+            'image' => $request->image,
         ]);
-        return redirect()->route('users.index');
+        return redirect()->route('artists.index');
     }
 
     /**
@@ -54,9 +54,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        $artist = Artist::find($id);
 
-        return view('admin.user.show', compact('user'));
+        return view('admin.artist.show', compact('artist'));
     }
 
     /**
@@ -67,9 +67,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
+        $artist = Artist::find($id);
 
-        return view('admin.user.edit', compact('user'));
+        return view('admin.artist.edit', compact('artist'));
     }
 
     /**
@@ -81,15 +81,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
+        $artist = Artist::find($id);
 
-        $user->update([
-            'name' => $request->username,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
+        $artist->update([
+            'artist_name' => $request->artist,
+            'description' => $request->description,
+            'image' => $request->image,
+            'birthday' => $request->birthday,
         ]);
 
-        return redirect()->route('users.index');
+        return redirect()->route('artists.index');
     }
 
     /**
@@ -100,8 +101,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::destroy($id);
+        $artist = Artist::destroy($id);
 
-        return redirect()->route('users.index');
+        return redirect()->route('artists.index');
     }
 }
