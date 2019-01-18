@@ -87,9 +87,10 @@
     </div>
     <!-- script for play-list -->
     <link href="css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
-    <script type="text/javascript" src="js/jplayer.playlist.min.js"></script>
+    <script type="text/javascript" src="source/js/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="source/js/jplayer.playlist.min.js"></script>
     <script type="text/javascript">
+    @foreach($albums as $album)
         //<![CDATA[
         $(document).ready(function(){
         
@@ -99,61 +100,14 @@
             }, [
                 
                 {
-                    title:"1. Ellie-Goulding",
+                    title:"{{ route('browse', '$album->artist_id')}} ",
                     artist:"",
                     mp4: "video/Ellie-Goulding.mp4",
                     ogv: "video/Ellie-Goulding.ogv",
                     webmv: "video/Ellie-Goulding.webm",
                     poster:"video/play1.png"
                 },
-                {
-                    title:"2. Mark-Ronson-Uptown",
-                    artist:"",
-                    mp4: "video/Mark-Ronson-Uptown.mp4",
-                    ogv: "video/Mark-Ronson-Uptown.ogv",
-                    webmv: "video/Mark-Ronson-Uptown.webm",
-                    poster:"video/play2.png"
-                },
-                {
-                    title:"3. Ellie-Goulding",
-                    artist:"",
-                    mp4: "video/Ellie-Goulding.mp4",
-                    ogv: "video/Ellie-Goulding.ogv",
-                    webmv: "video/Ellie-Goulding.webm",
-                    poster:"video/play1.png"
-                },
-                {
-                    title:"4. Maroon-Sugar",
-                    artist:"",
-                    mp4: "video/Maroon-Sugar.mp4",
-                    ogv: "video/Maroon-Sugar.ogv",
-                    webmv: "video/Maroon-Sugar.webm",
-                    poster:"video/play4.png"
-                },
-                {
-                    title:"5. Pharrell-Williams",
-                    artist:"",
-                    mp4: "video/Pharrell-Williams.mp4",
-                    ogv: "video/Pharrell-Williams.ogv",
-                    webmv: "video/Pharrell-Williams.webm",
-                    poster:"video/play5.png"
-                },
-                {
-                    title:"6. Ellie-Goulding",
-                    artist:"",
-                    mp4: "video/Ellie-Goulding.mp4",
-                    ogv: "video/Ellie-Goulding.ogv",
-                    webmv: "video/Ellie-Goulding.webm",
-                    poster:"video/play1.png"
-                },
-                {
-                    title:"7. Pharrell-Williams",
-                    artist:"",
-                    mp4: "video/Pharrell-Williams.mp4",
-                    ogv: "video/Pharrell-Williams.ogv",
-                    webmv: "video/Pharrell-Williams.webm",
-                    poster:"video/play5.png"
-                }
+                
             ], {
                 swfPath: "../../dist/jplayer",
                 supplied: "webmv,ogv,mp4",
@@ -165,6 +119,7 @@
         
         });
         //]]>
+    @endforeach
             
     </script>
     <!-- //script for play-list -->
@@ -173,114 +128,23 @@
 </div>
 <div class="response">
     <h4>Responses</h4>
+    @foreach($artists as $artist)
     <div class="media response-info">
         <div class="media-left response-text-left">
-            <a href="#">
-            <img class="media-object" src="images/c1.jpg" alt="">
+            <a href="{{ route('single','$artist->id')}} ">
+            <img class="media-object" src=" {{$artist->image}} " alt="">
             </a>
-            <h5><a href="#">Username</a></h5>
+            <h5><a href="{{ route('single','$artist->id')}} ">{{$artist->artist_name}}</a></h5>
         </div>
         <div class="media-body response-text-right">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <p>{{$artist->description}}</p>
             <ul>
-                <li>Sep 21, 2015</li>
-                <li><a href="single.html">Reply</a></li>
-            </ul>
-            <div class="media response-info">
-                <div class="media-left response-text-left">
-                    <a href="#">
-                    <img class="media-object" src="images/c2.jpg" alt="">
-                    </a>
-                    <h5><a href="#">Username</a></h5>
-                </div>
-                <div class="media-body response-text-right">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <ul>
-                        <li>Apr 17, 2016</li>
-                        <li><a href="single.html">Reply</a></li>
-                    </ul>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-    <div class="media response-info">
-        <div class="media-left response-text-left">
-            <a href="#">
-            <img class="media-object" src="images/c3.jpg" alt="">
-            </a>
-            <h5><a href="#">Username</a></h5>
-        </div>
-        <div class="media-body response-text-right">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <ul>
-                <li>May 21,2016</li>
-                <li><a href="single.html">Reply</a></li>
+                <li>{{$artist->birthday}}</li>
             </ul>
         </div>
         <div class="clearfix"> </div>
     </div>
-    <div class="media response-info">
-        <div class="media-left response-text-left">
-            <a href="#">
-            <img class="media-object" src="images/c4.jpg" alt="">
-            </a>
-            <h5><a href="#">Username</a></h5>
-        </div>
-        <div class="media-body response-text-right">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <ul>
-                <li>Mar 28, 2016</li>
-                <li><a href="single.html">Reply</a></li>
-            </ul>
-            <div class="media response-info">
-                <div class="media-left response-text-left">
-                    <a href="#">
-                    <img class="media-object" src="images/c5.jpg" alt="">
-                    </a>
-                    <h5><a href="#">Username</a></h5>
-                </div>
-                <div class="media-body response-text-right">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <ul>
-                        <li>Feb 19, 2016</li>
-                        <li><a href="single.html">Reply</a></li>
-                    </ul>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-    <div class="media response-info">
-        <div class="media-left response-text-left">
-            <a href="#">
-            <img class="media-object" src="images/c6.jpg" alt="">
-            </a>
-            <h5><a href="#">Username</a></h5>
-        </div>
-        <div class="media-body response-text-right">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <ul>
-                <li>Jan 20, 2016</li>
-                <li><a href="single.html">Reply</a></li>
-            </ul>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
+   @endforeach
 </div>
 <!-- /agileits -->
 <div class="clearfix"> </div>

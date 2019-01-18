@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artist extends Model
 {
-    protected $table = "artists";
-
     protected $fillable = [
         'artist_name', 'description', 'birthday', 'image',
     ];

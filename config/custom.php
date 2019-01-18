@@ -13,5 +13,7 @@ return [
     ],
     'view_count' => 0,
     'paginate_5' => 5,
+    'paginate_8' => 8,
+    'paginate_6' => 6,
     'path_image' => '/user_images/'
 ];
