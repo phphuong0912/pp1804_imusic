@@ -55,6 +55,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $users->links() }}
                 <!-- /.table-responsive -->
             </div>
             <!-- /.panel-body -->

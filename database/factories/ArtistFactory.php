@@ -18,5 +18,6 @@ $factory->define(App\Models\Artist::class, function (Faker $faker) {
         'artist_name' => $faker->name,
         'birthday' => $faker->dateTime,
         'description' => $faker->text,
+        'image' => $faker->imageURL
     ];
 });

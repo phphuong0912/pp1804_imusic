@@ -12,5 +12,6 @@ return [
         'error' => 500
     ],
     'view_count' => 0,
-    'paginate_5' => 5
+    'paginate_5' => 5,
+    'path_image' => '/user_images/'
 ];

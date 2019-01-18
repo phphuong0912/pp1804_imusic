@@ -10,6 +10,10 @@ class Artist extends Model
 {
     protected $table = "artists";
 
+    protected $fillable = [
+        'artist_name', 'description', 'birthday', 'image',
+    ];
+
     public function musics()
     {
         return $this->belongsToMany(Music::class);
