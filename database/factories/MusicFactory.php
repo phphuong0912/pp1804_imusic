@@ -18,8 +18,8 @@ $factory->define(App\Models\Music::class, function (Faker $faker) {
         'name' => $faker->name,
         'lyrics' => $faker->realText,
         'view_count' => 0,
-        'artist_id' => factory(App\Models\Artist::class)->create(),
-        'album_id' => factory(App\Models\Album::class)->create(),
+        'artist_id' => 1,
+        'album_id' => 1,
         'path' => 'music.mp3',
         'type' => 'mp4',
     ];

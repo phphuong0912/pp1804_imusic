@@ -1971,7 +1971,9 @@ border-radius: 4px;
     -moz-border-radius: 4px;
 	}
 	.content-grid {
-    width: 21.2%;
+	width: 21.2%;
+	font-size: 13px;
+	
 }
 /*---browse-grid-----*/
 .browse-grid {

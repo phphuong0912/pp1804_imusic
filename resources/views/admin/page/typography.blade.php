@@ -1,5 +1,5 @@
 
-@extends('admin.master')
+@extends('frontend.trangchu')
 @section('content')
 <div id="page-wrapper">
     <!--/inner-content-->
