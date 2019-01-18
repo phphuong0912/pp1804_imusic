@@ -11,6 +11,7 @@
         <link href="{{ asset('bower_components/sb-admin/app/styles/sb-admin-2.css') }}" rel='stylesheet' type='text/css' />
         <link href="{{ asset('bower_components/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('bower_components/metisMenu/dist/metisMenu.css') }}" type='text/css' />
+        @yield('style')
     </head>
     <body>
         <div id="wrapper">
@@ -258,6 +259,10 @@
                             </li>
                             <li>
                                 <a href="{{ route('musics.index') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Song list<span class="fa arrow"></span></a>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="{{ route('artists.index') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Artist list<span class="fa arrow"></span></a>
                                 <!-- /.nav-second-level -->
                             </li>
                         </ul>
