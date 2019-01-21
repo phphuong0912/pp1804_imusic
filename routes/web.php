@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/home', 'HomeController@index')->name('home');
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('exit');
 
@@ -19,6 +19,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkRole'], function() {
     Route::resource('users', 'UserController');
     Route::resource('musics', 'MusicController');
     Route::resource('artists', 'ArtistController');
+    Route::post('search', 'MusicController@search')->name('searchMusic');
 });
 
 Route::post('favorite/{music}', 'MusicController@favoriteMusic');

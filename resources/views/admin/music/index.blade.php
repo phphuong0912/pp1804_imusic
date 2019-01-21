@@ -12,19 +12,19 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-body">
-                <a class="btn btn-default" href ="{{ route('musics.create') }}"><i class="fa fa-edit"></i>Upload a new song</a>
-            </div>
-            <li class="music-search">
-                <div class="input-group custom-search-form">
-                    <input type="text" class="form-control" placeholder="Search here...">
+            <a class="btn btn-default upload-song" href ="{{ route('musics.create') }}"><i class="fa fa-edit"></i>Upload a new song</a>
+            <form class="col-xs-8 form-search-music" action="{{ route('searchMusic')}}"  method="POST">
+                {{ csrf_field() }}
+                <div class="col-xs-8 col-xs-offset-4 input-group custom-search-form">
+                    <input type="text" name="keyword" class="form-control" placeholder="Search...">
                     <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
+                    <button class="btn btn-default" type="submit">
                     <i class="fa fa-search"></i>
                     </button>
                     </span>
                 </div>
-                <!-- /input-group -->
-            </li>
+            </form>
+            </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <table width="100%" class="table table-striped table-bordered table-hover" id="music-table">
@@ -89,4 +89,14 @@
         });
     });
 </script>
+@endsection
+@section('style')
+<style>
+.upload-song { 
+    float: left;
+}
+.form-search-music {
+    float: right;
+}
+</style>
 @endsection

@@ -133,4 +133,12 @@ class MusicController extends Controller
 
         return back();
     }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+        $musics = Music::where('name', '=', $keyword)->orderBy('name')->paginate(config('custom.paginate_5'));
+        
+        return view('admin.music.index', compact('musics'));
+    }
 }
