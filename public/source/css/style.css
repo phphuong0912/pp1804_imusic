@@ -1266,7 +1266,8 @@ a.top-sign {
   padding: 4em 0 0 0;
 }
 .content-grid img {
-    width: 100%;
+	width: 300px !important;
+	height: 210px;
 }
 .content-grid {
     width:25%;
@@ -1971,7 +1972,9 @@ border-radius: 4px;
     -moz-border-radius: 4px;
 	}
 	.content-grid {
-    width: 21.2%;
+	width: 21.2%;
+	font-size: 13px;
+	
 }
 /*---browse-grid-----*/
 .browse-grid {

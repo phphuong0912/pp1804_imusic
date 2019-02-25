@@ -7,13 +7,11 @@ use App\Models\Rating;
 use App\Models\Category;
 use App\Models\Album;
 use App\Models\Comment;
+use App\Models\Artist;
 use Illuminate\Database\Eloquent\Model;
 
 class Music extends Model
 {
-
-    protected $table = "musics";
-
     /**
      * The attributes that are mass assignable.
      *

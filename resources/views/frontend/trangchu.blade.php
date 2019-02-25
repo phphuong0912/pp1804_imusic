@@ -1,10 +1,4 @@
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -48,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="left-side-inner">
 
 				<!--sidebar nav start-->
-					@include('admin.layout.menu')
+					@include('frontend.layout.menu')
 				<!--sidebar nav end-->
 			</div>
 		</div>
@@ -68,13 +62,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>Download and Avail Special Songs Videos and Audios.</p>
 							<div class="app-devices">
 								<h5>Gets the app from</h5>
-								<a href="#"><img src="images/1.png" alt=""></a>
-								<a href="#"><img src="images/2.png" alt=""></a>
+								<a href="https://www.apple.com/ios/app-store/"><img src="source/image/1.png" alt=""></a>
+								<a href="http://gameappsfree.com/game/google-play-store.html"><img src="source/image/2.png" alt=""></a>
 								<div class="clearfix"> </div>
 							</div>
 						</div>
 						<div class="col-md-7 app-image">
-							<img src="images/apps.png" alt="">
+							<img src="source/image/apps.png" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -134,13 +128,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--toggle button end-->
 			<!--notification menu start -->
 			<div class="menu-right">
-			@include('admin.layout.header')
+			@include('frontend.layout.header')
 </div>
 			<!--notification menu end -->
 			<!-- //header-ends -->
  	 <!-- /w3l-agileits -->
 				@yield('content')					
-				@include('admin.layout.footer')					
+				@include('frontend.layout.footer')					
         <!--footer section start-->
 			<footer>
 			   <p>&copy 2019 Music.Framgia | Design by Phạm Hoàng Phương-Cao Xuân Hợi</p>
@@ -152,6 +146,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   
 <script src="source/js/jquery.nicescroll.js"></script>
 <script src="source/js/scripts.js"></script>
+<script type="text/javascript" src="source/js/mediaelement-and-player.min.js"></script> -->
 <!-- Bootstrap Core JavaScript -->
 <script src="source/js/bootstrap.js"></script>
 </body>
