@@ -11,11 +11,13 @@ class pageController extends Controller
 {
     public function getIndex()
     {  
-        $songs = Music::all();
+        $songs = Music::with('artists')->orderBy('updated_at', 'DESC')->paginate(config('custom.paginate_8'));
+        $charts = Music::with('artists')->orderBy('view_count', 'DESC')->paginate(config('custom.paginate_8'));
         $albums = Album::all();
         $artists = Artist::all();
-        
-        return view('admin.page.index',compact('songs', 'albums', 'artists'));
+        $serial = 0;
+
+        return view('admin.page.index', compact('songs', 'albums', 'artists', 'charts', 'serial'));
     }
 
     public function getBlog()
@@ -25,7 +27,10 @@ class pageController extends Controller
 
     public function getBrowse()
     {
-        return view('admin.page.browse');
+        $songs = Music::all();
+        $albums = Album::all();
+        
+        return view('admin.page.browse', compact('songs', 'albums'));
     }
 
     public function getContact()
@@ -35,12 +40,18 @@ class pageController extends Controller
 
     public function getRadio()
     {
-        return view('admin.page.radio');
+        $songs = Music::all();
+        $albums = Album::all();
+        $artists = Artist::all();
+
+        return view('admin.page.radio', compact('songs', 'albums', 'artists'));
     }
 
     public function getSingle()
     {
-        return view('admin.page.single');
+        $artists = Artist::all();
+        $albums = Album::all();
+        return view('admin.page.single', compact('artists', 'albums'));
     }
 
     public function getTypography()

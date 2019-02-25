@@ -1266,7 +1266,8 @@ a.top-sign {
   padding: 4em 0 0 0;
 }
 .content-grid img {
-    width: 100%;
+	width: 300px !important;
+	height: 210px;
 }
 .content-grid {
     width:25%;

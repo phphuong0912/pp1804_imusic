@@ -1,10 +1,4 @@
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -152,6 +146,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   
 <script src="source/js/jquery.nicescroll.js"></script>
 <script src="source/js/scripts.js"></script>
+<script type="text/javascript" src="source/js/mediaelement-and-player.min.js"></script> -->
 <!-- Bootstrap Core JavaScript -->
 <script src="source/js/bootstrap.js"></script>
 </body>
