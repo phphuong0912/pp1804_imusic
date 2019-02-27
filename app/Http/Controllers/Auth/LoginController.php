@@ -43,6 +43,22 @@ class LoginController extends Controller
     {
         Auth::logout();
 
-        return redirect('/login');
+        return redirect('/');
+    }
+
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        if(Auth::user()->role == config('custom.role.admin')){
+            $returnUrl = route('users.index');
+        }else{
+            $returnUrl = url('/');
+        }
+
+        return $this->authenticated($request, $this->guard()->user())
+                ?: redirect()->intended($returnUrl);
     }
 }

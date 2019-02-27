@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/admin/home', 'HomeController@index')->name('home');
+Route::get('/', [
+        'as'=>'trang-chu',
+        'uses'=>'PageController@getIndex'
+    ]);
+
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('exit');
 
@@ -27,14 +31,9 @@ Route::post('unfavorite/{music}', 'MusicController@unFavoriteMusic');
 
 Route::get('my_favorites', 'UserController@myFavorites')->middleware('auth');
 
-Route::get('index', [
-    'as'=>'trang-chu',
-    'uses'=>'PageController@getIndex'
-    ]);
-
 Route::get('blog', [
-    'as'=>'blog',
-    'uses'=>'PageController@getBlog'
+        'as'=>'blog',
+        'uses'=>'PageController@getBlog'
     ]);
 
 Route::get('browse', [

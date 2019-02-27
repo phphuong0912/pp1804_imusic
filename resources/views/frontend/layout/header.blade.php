@@ -50,9 +50,25 @@
     </div>
     <div class="col-md-4 login-pop">
         <div id="loginpop">
-            <a href="#" id="loginButton"><span>Login <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a><a class="top-sign" href="#" data-toggle="modal" data-target="#myModal5"><img src="source/image/user.png" /></a>
+            @if(auth()->check())
+            <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <img src="source/image/user.png" /> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <!-- <li class="divider"></li> -->
+                            <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+            @else
+                <a href="#" id="loginButton"><span>Login <i class="arrow glyphicon glyphicon-chevron-right"></i></span></a><a class="top-sign" href="#" data-toggle="modal" data-target="#myModal5"><img src="source/image/user.png" /></a>
+            @endif
             <div id="loginBox">
-                <form action="#" method="post" id="loginForm">
+                <form action="{{ route('login') }}" method="post" id="loginForm">
+                    @csrf
+
                     <fieldset id="body">
                         <fieldset>
                             <label for="email">Email Address</label>

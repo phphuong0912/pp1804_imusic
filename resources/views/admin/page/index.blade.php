@@ -89,7 +89,7 @@
             <!--//pop-up-box -->
             <div class="albums">
                 <div class="tittle-head">
-                    <h3 class="tittle">New Song <span class="new">New</span></h3>
+                    <h3 class="title">New Song <span class="new">New</span></h3>
                     <a href="{{ route('radio')}} ">
                         <h4 class="tittle">See all</h4>
                     </a>
@@ -97,9 +97,7 @@
                 </div>
                 @foreach($songs as $song)
                 <div class="col-md-3 content-grid">
-                    @foreach($song->artists as $artist)
-                    <a class="play-icon popup-with-zoom-anim" href="{{ route('single', '$song->id')}} "><img src="{{ $artist->image }}" title="allbum-name"></a>
-                    @endforeach
+
                     <a class="button play-icon popup-with-zoom-anim" href="{{ route('trang-chu', '$song->id')}} ">{{ $song->name }}</a>
                 </div>
                 @endforeach

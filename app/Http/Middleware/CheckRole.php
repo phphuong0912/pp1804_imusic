@@ -14,21 +14,17 @@ class CheckRole
      * @param  \Closure  $next
      * @return mixed
      */
-    //for admin 
     public function handle($request, Closure $next)
     {
-        if (Auth::check())
-        {
-            if(Auth::user()->role != config('custom.role.admin'))
-            {
-                return redirect()->route('home');
+        if (Auth::check()) {
+            if(Auth::user()->role == config('custom.role.admin')) {
+                return $next($request);
             }
 
-            return $next($request);
-            
+            return redirect()->route('trang-chu');
         }
 
-        return redirect()->route('login');
+        return redirect()->route('trang-chu');
     }
 }
         
